@@ -33,7 +33,9 @@ impl ApplWorld {
     rb_handle
   }
 
-  pub fn get_rigid_body(&self, handle: RigidBodyHandle) -> Vector<f32> {
+  pub fn get_rigid_body(&self, handle: RigidBodyHandle) -> &RigidBody { &self.rigid_bodies[handle] }
+
+  pub fn get_rigid_body_pos(&self, handle: RigidBodyHandle) -> Vector<f32> {
     (&self.rigid_bodies[handle]).translation() * self.scale
   }
 }
