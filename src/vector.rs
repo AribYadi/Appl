@@ -16,6 +16,12 @@ pub struct Vect2<T: std::fmt::Debug> {
   pub x: T,
   pub y: T,
 }
+impl<T: std::fmt::Debug> Vect2<T> {
+  fn new(x: T, y: T) -> Self { Self { x, y } }
+
+  fn zero_float() -> Vect2<f32> { Vect2 { x: 0.0, y: 0.0 } }
+}
+
 impl<T: std::fmt::Debug> From<Vect2<T>> for Vector2<T> {
   fn from(vect2: Vect2<T>) -> Vector2<T> { vector![vect2.x, vect2.y] }
 }

@@ -59,7 +59,7 @@ impl ApplWorld {
   /// Returns a reference to the rigid body using the rigid body handle
   pub fn get_rigid_body(&self, handle: RigidBodyHandle) -> &RigidBody { &self.rigid_bodies[handle] }
 
-  // Returns the position of a rigid body got using the rigid body handle
+  /// Returns the position of a rigid body got using the rigid body handle
   pub fn get_rigid_body_pos(&self, handle: RigidBodyHandle) -> Vect2<f32> {
     ((&self.rigid_bodies[handle]).translation() * self.scale).into()
   }
