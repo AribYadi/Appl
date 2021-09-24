@@ -1,7 +1,10 @@
 use rapier2d::prelude::*;
 
+use crate::vector::Vect2;
+
+/// The Appl World
 pub struct ApplWorld {
-  gravity: Vector<f32>,
+  gravity: Vect2<f32>,
   integration_parameters: IntegrationParameters,
   physics_pipeline: PhysicsPipeline,
   island_manager: IslandManager,
@@ -19,7 +22,7 @@ pub struct ApplWorld {
 }
 impl ApplWorld {
   /// Initialize an Appl World
-  pub fn new(gravity: Vector<f32>, scale: f32) -> Self {
+  pub fn new(gravity: Vect2<f32>, scale: f32) -> Self {
     let rigid_bodies = RigidBodySet::new();
     let colliders = ColliderSet::new();
 
@@ -55,7 +58,7 @@ impl ApplWorld {
   /// Updates the world
   pub fn step(&mut self) {
     self.physics_pipeline.step(
-      &self.gravity,
+      &self.gravity.into(),
       &self.integration_parameters,
       &mut self.island_manager,
       &mut self.broad_phase,

@@ -12,20 +12,26 @@ fn win_conf() -> Conf {
 #[macroquad::main(win_conf)]
 async fn main() {
   // Initialize Appl World
-  let mut appl = ApplWorld::new(new_vec2(0.0, 9.81), 50.0);
+  let mut appl = ApplWorld::new(Vect2 { x: 0.0, y: 9.81 }, 50.0);
   // Create ground rigid body
   let ground = appl.add_rigid_body(
     BodyType::Static,
+    BodyShape::Cuboid {
+      width: 64.0,
+      height: 32.0,
+    },
     0.3,
-    new_vec2(64.0, 32.0),
-    new_vec2(0.0, 320.0),
+    Vect2 { x: 0.0, y: 320.0 },
   );
   // Create box rigid body
   let box1 = appl.add_rigid_body(
     BodyType::Dynamic,
+    BodyShape::Cuboid {
+      width: 32.0,
+      height: 32.0,
+    },
     0.3,
-    new_vec2(32.0, 32.0),
-    new_vec2(0.0, 0.0),
+    Vect2 { x: 0.0, y: 0.0 },
   );
 
   loop {
