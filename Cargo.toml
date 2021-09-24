@@ -2,7 +2,7 @@
 name = "appl"
 authors = ["AribYadi <aribyadi@gmail.com>"]
 description = """
-Appl is a physics engine powered by Rapier. It is currently 2d only.
+Appl is a physics engine powered by the Rapier library. It is currently 2d only.
 """
 homepage = "https://github.com/AribYadi/Appl.git"
 repository = "https://github.com/AribYadi/Appl.git"
