@@ -10,6 +10,7 @@ pub enum BodyType {
   Static,
 }
 impl ApplWorld {
+  /// Adds a rigid body to the world
   pub fn add_rigid_body(
     &mut self,
     rigid_body_type: BodyType,
@@ -33,8 +34,10 @@ impl ApplWorld {
     rb_handle
   }
 
+  /// Returns a reference to the rigid body using the rigid body handle
   pub fn get_rigid_body(&self, handle: RigidBodyHandle) -> &RigidBody { &self.rigid_bodies[handle] }
 
+  // Returns the position of a rigid body got using the rigid body handle
   pub fn get_rigid_body_pos(&self, handle: RigidBodyHandle) -> Vector<f32> {
     (&self.rigid_bodies[handle]).translation() * self.scale
   }

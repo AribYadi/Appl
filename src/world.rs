@@ -1,16 +1,16 @@
 use rapier2d::prelude::*;
 
 pub struct ApplWorld {
-  pub gravity: Vector<f32>,
-  pub integration_parameters: IntegrationParameters,
-  pub physics_pipeline: PhysicsPipeline,
-  pub island_manager: IslandManager,
-  pub broad_phase: BroadPhase,
-  pub narrow_phase: NarrowPhase,
-  pub joints: JointSet,
-  pub ccd_solver: CCDSolver,
-  pub physics_hooks: (),
-  pub event_handler: (),
+  gravity: Vector<f32>,
+  integration_parameters: IntegrationParameters,
+  physics_pipeline: PhysicsPipeline,
+  island_manager: IslandManager,
+  broad_phase: BroadPhase,
+  narrow_phase: NarrowPhase,
+  joints: JointSet,
+  ccd_solver: CCDSolver,
+  physics_hooks: (),
+  event_handler: (),
 
   pub rigid_bodies: RigidBodySet,
   pub colliders: ColliderSet,
@@ -18,6 +18,7 @@ pub struct ApplWorld {
   pub scale: f32,
 }
 impl ApplWorld {
+  /// Initialize an Appl World
   pub fn new(gravity: Vector<f32>, scale: f32) -> Self {
     let rigid_bodies = RigidBodySet::new();
     let colliders = ColliderSet::new();
@@ -51,6 +52,7 @@ impl ApplWorld {
     }
   }
 
+  /// Updates the world
   pub fn step(&mut self) {
     self.physics_pipeline.step(
       &self.gravity,
