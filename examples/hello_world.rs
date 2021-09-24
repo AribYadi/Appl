@@ -14,9 +14,19 @@ async fn main() {
   // Initialize Appl World
   let mut appl = ApplWorld::new(new_vec2(0.0, 9.81), 50.0);
   // Create ground rigid body
-  let ground = appl.add_rigid_body(BodyType::Static, new_vec2(64.0, 32.0), new_vec2(0.0, 320.0));
+  let ground = appl.add_rigid_body(
+    BodyType::Static,
+    0.3,
+    new_vec2(64.0, 32.0),
+    new_vec2(0.0, 320.0),
+  );
   // Create box rigid body
-  let box1 = appl.add_rigid_body(BodyType::Dynamic, new_vec2(32.0, 32.0), new_vec2(0.0, 0.0));
+  let box1 = appl.add_rigid_body(
+    BodyType::Dynamic,
+    0.3,
+    new_vec2(32.0, 32.0),
+    new_vec2(0.0, 0.0),
+  );
 
   loop {
     clear_background(WHITE);

@@ -14,6 +14,7 @@ impl ApplWorld {
   pub fn add_rigid_body(
     &mut self,
     rigid_body_type: BodyType,
+    restitution: f32,
     size: Vector2<f32>,
     position: Vector2<f32>,
   ) -> RigidBodyHandle {
@@ -24,8 +25,9 @@ impl ApplWorld {
     let rigid_body = RigidBodyBuilder::new(rigid_body_type)
       .translation(position / self.scale)
       .build();
-    let collider =
-      ColliderBuilder::cuboid(size.x / 2.0 / self.scale, size.y / 2.0 / self.scale).build();
+    let collider = ColliderBuilder::cuboid(size.x / 2.0 / self.scale, size.y / 2.0 / self.scale)
+      .restitution(restitution)
+      .build();
     let rb_handle = self.rigid_bodies.insert(rigid_body);
     self
       .colliders
