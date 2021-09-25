@@ -6,7 +6,7 @@
 
 ## Description
 
-<img src="https://github.com/AribYadi/Icons/blob/master/Appl.svg" align="right" alt="Appl Logo" width="128" height="128">
+<img src="https://github.com/AribYadi/Appl/blob/master/Appl.svg" align="right" alt="Appl Logo" width="128" height="128">
 Appl is a library that provides abstraction over the Rapier library.<br />
 Appl was created due to the lack of any physics engine for beginners to use.<br />
 Appl's main purpose is to be simple and easy to use.<br />
